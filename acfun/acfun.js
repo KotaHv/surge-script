@@ -57,7 +57,7 @@ async function signIn() {
     } else {
         const data = JSON.parse(body);
         if (data.result == 0) {
-            msg = result.msg;
+            msg = data.msg;
         } else if (data.error_msg) {
             msg = data.error_msg;
         } else {
