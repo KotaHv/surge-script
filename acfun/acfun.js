@@ -47,10 +47,8 @@ async function signIn() {
     };
     const {
         err,
-        resp,
         body
     } = await request.get(req);
-    // console.log(resp);
     let msg = '';
     if (err) {
         msg = `请求失败!\n${err}`;
