@@ -1,4 +1,3 @@
-//https://api-ipv6.app.acfun.cn/rest/app/user/getSignInInfos
 const cookieKey = "cookie-acfun";
 const title = "Acfun";
 
