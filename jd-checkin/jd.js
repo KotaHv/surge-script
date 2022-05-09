@@ -50,11 +50,9 @@ function getCookie() {
 async function checkin() {
     let msg = '';
     msg += await jdBean() + '\n'; // 京豆
-    msg += await jdSubsidy() + '\n'; // 金贴
     msg += await jrSubsidy() + '\n'; // 金融金贴
     msg += await jdCash() + '\n'; // 现金
     msg += await jrBeanDouble() + '\n'; // 金融京豆-双签
-    // msg += await jrSubsidyDouble() + '\n'; // 金融金贴-双签
     let msg2 = '';
     msg2 += await TotalCash() + '\n';
     msg2 += await TotalBean() + '\n';
@@ -75,7 +73,6 @@ async function jdBean() {
     };
     const {
         err,
-        resp,
         body
     } = await request.post(req);
     //console.log(resp);
@@ -112,42 +109,6 @@ async function jdBean() {
     return msg;
 }
 
-async function jdSubsidy() {
-    let msg = '';
-    const req = {
-        url: 'https://ms.jr.jd.com/gw/generic/uc/h5/m/signIn7',
-        headers: {
-            Referer: "https://active.jd.com/forever/cashback/index",
-            Cookie: COOKIE
-        }
-    };
-    const {
-        err,
-        resp,
-        body
-    } = await request.get(req);
-    //console.log(resp);
-    if (err) {
-        msg = `金贴请求失败!\n${err}`;
-    } else {
-        const data = JSON.parse(body);
-        if (data.resultCode == 0 && data.resultData.data && data.resultData.data.thisAmount) {
-            msg = `京东商城-金贴: 成功, 明细: ${data.resultData.data.thisAmountStr||`无`}金贴 💰`
-        } else {
-            if (body.match(/已存在|"thisAmount":0/)) {
-                msg = "京东商城-金贴: 失败, 原因: 无金贴 ⚠️"
-            } else if (body.match(/请先登录/)) {
-                msg = "京东商城-金贴: 失败, 原因: Cookie失效‼️"
-            } else {
-                const msg = body.split(/\"msg\":\"([\u4e00-\u9fa5].+?)\"/)[1];
-                msg = `京东商城-金贴: 失败, ${msg||`原因: 未知`} ⚠️`
-            }
-        }
-    }
-    console.log(msg);
-    return msg;
-}
-
 async function jrSubsidy() {
     let msg = '';
     const req = {
@@ -159,10 +120,8 @@ async function jrSubsidy() {
     };
     const {
         err,
-        resp,
         body
     } = await request.post(req);
-    //console.log(resp);
     if (err) {
         msg = `京东金融-金贴请求失败!\n${err}`;
     } else {
@@ -196,7 +155,6 @@ async function jdCash() {
     };
     const {
         err,
-        resp,
         body
     } = await request.get(req);
     //console.log(resp);
@@ -231,10 +189,8 @@ async function jrBeanDouble() {
     };
     const {
         err,
-        resp,
         body
     } = await request.post(req);
-    //console.log(resp);
     if (err) {
         msg = `金贴请求失败!\n${err}`;
     } else {
@@ -264,52 +220,6 @@ async function jrBeanDouble() {
     return msg;
 }
 
-// 京东金贴-双签
-async function jrSubsidyDouble() {
-    let msg = '';
-    const req = {
-        url: "https://nu.jr.jd.com/gw/generic/jrm/h5/m/process",
-        headers: {
-            Cookie: COOKIE
-        },
-        body: `reqData=${encodeURIComponent(`{"actCode":"1DF13833F7","type":3,"frontParam":{"channel":"JR","belong":4}}`)}`
-    };
-    const {
-        err,
-        resp,
-        body
-    } = await request.post(req);
-    //console.log(resp);
-    if (err) {
-        msg = `金贴请求失败!\n${err}`;
-    } else {
-        const data = JSON.parse(body);
-        if (data.resultCode == 0) {
-            if (data.resultData.data.businessData != null) {
-                if (!body.match(/"businessCode":"30\dss?q"/)) {
-                    let count = body.match(/\"count\":\"?(\d.*?)\"?,/)
-                    count = count ? count[1] : 0;
-                    msg = `京东金贴-双签: 成功, 明细: ${count||`无`}金贴 💰`
-                } else {
-                    const es = data.resultData.data.businessMsg
-                    const ep = data.resultData.data.businessData.businessMsg
-                    const tp = body.match(/已领取|300ss?q/) ? `已签过` : `${ep||es||data.resultMsg||`未知`}`
-                    msg = `京东金贴-双签: 失败, 原因: ${tp} ⚠️`;
-                }
-
-            } else {
-                msg = `京东金贴-双签: 失败, 原因: 领取异常 ⚠️`;
-            }
-        } else {
-            const redata = typeof (data.resultData) == 'string' ? data.resultData : ''
-            msg = `\`京东金贴-双签: 失败, ${data.resultCode==3?`原因: Cookie失效‼️`:`${redata||'原因: 未知 ⚠️'}`}`
-        }
-    }
-    console.log(msg);
-    return msg;
-}
-
-
 async function TotalCash() {
     let msg = '';
     const req = {
@@ -321,10 +231,8 @@ async function TotalCash() {
     };
     const {
         err,
-        resp,
         body
     } = await request.post(req);
-    //console.log(resp);
     if (err) {
         msg = `京东请求失败!\n${err}`;
     } else {
@@ -350,10 +258,8 @@ async function TotalBean() {
     };
     const {
         err,
-        resp,
         body
     } = await request.get(req);
-    //console.log(resp);
     if (err) {
         msg = `京东请求失败!\n${err}`;
     } else {
@@ -379,10 +285,8 @@ async function TotalSubsidy() {
     };
     const {
         err,
-        resp,
         body
     } = await request.get(req);
-    //console.log(resp);
     if (err) {
         msg = `京东请求失败!\n${err}`;
     } else {
@@ -408,10 +312,8 @@ async function TotalMoney() {
     };
     const {
         err,
-        resp,
         body
     } = await request.get(req);
-    //console.log(resp);
     if (err) {
         msg = `京东请求失败!\n${err}`;
     } else {
