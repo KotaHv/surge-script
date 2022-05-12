@@ -68,8 +68,6 @@ async function signIn() {
 function Request() {
     return new(class {
         request(obj, method) {
-            obj.headers['User-Agent'] = 'JD4iPhone/167169 (iPhone; iOS 13.4.1; Scale/3.00)';
-            if (method == 'post' && obj.body) obj.headers['Content-Type'] = 'application/x-www-form-urlencoded';
             return new Promise(resolve => {
                 $httpClient[method](obj, (err, resp, body) => {
                     resolve({
