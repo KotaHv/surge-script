@@ -7,30 +7,31 @@ async function fetchFreeGames() {
     const {
         body
     } = await request.get({
-        url: "https://rsshub.app/epicgames/freegames"
+        url: "https://store-site-backend-static-ipv4.ak.epicgames.com/freeGamesPromotions?locale=zh-CN&country=US&allowCountries=US"
     });
-    const itemRegex = new RegExp(/<item>[\s\S]*?<\/item>/g);
-    body.match(itemRegex).forEach((item) => {
-        let name = item.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/)[1];
-        let url = item.match(/<link>([\s\S]*?)<\/link>/)[1];
-        let time = item.match(/<pubDate>([\s\S]*?)<\/pubDate>/)[1];
-        let description = item.match(/<description><!\[CDATA\[([\s\S]+?)\]\]><\/description>/)[1];
-        console.log(`🎮 [Epic 限免]  ${name}`);
-        console.log(`⏰ 发布时间: ${formatTime(time)}`);
-        console.log(`📰 游戏简介: ${description}`);
+    const data = JSON.parse(body);
+    const now = new Date();
+    const items = data.data.Catalog.searchStore.elements.filter(item => item.promotions && item.promotions.promotionalOffers && item.promotions.promotionalOffers[0] && new Date(item.promotions.promotionalOffers[0].promotionalOffers[0].startDate) <= now && new Date(item.promotions.promotionalOffers[0].promotionalOffers[0].endDate) >= now)
+    items.forEach((item) => {
+        console.log(`🎮 [Epic 限免]  ${item.title}`);
+        console.log(`⏰ 发布时间: ${item.effectiveDate}`);
+        console.log(`📰 游戏简介: ${item.description}`);
         $notification.post(
-            `🎮 [Epic 限免]  ${name}`,
-            `⏰ 发布时间: ${formatTime(time)}`,
-            `📰 游戏简介: ${description}`, {
-                url
+            `🎮 [Epic 限免]  ${item.title}`,
+            `⏰ 发布时间: ${item.effectiveDate}`,
+            `📰 游戏简介: ${item.description}`, {
+                url: `https://store.epicgames.com/zh-CN/p/${item.catalogNs.mappings[0].pageSlug}`
             }
         );
-    });
+    })
+
 }
 
 function Request() {
     return new(class {
         request(obj, method) {
+            obj.headers = {};
+            obj.headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36';
             return new Promise(resolve => {
                 $httpClient[method](obj, (err, resp, body) => {
                     resolve({
@@ -48,11 +49,4 @@ function Request() {
             return this.request(obj, 'post');
         }
     })();
-}
-
-function formatTime(timestamp) {
-    const date = new Date(timestamp);
-    return `${date.getFullYear()}年${
-        date.getMonth() + 1
-    }月${date.getDate()}日${date.getHours()}时`;
 }
