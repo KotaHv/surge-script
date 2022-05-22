@@ -19,7 +19,7 @@ async function fetchFreeGames() {
       ) <= now &&
       new Date(
         item.promotions.promotionalOffers[0].promotionalOffers[0].endDate
-      ) >= now
+      ) > now
   );
   items.forEach((item) => {
     console.log(`🎮 [Epic 限免]  ${item.title}`);
@@ -27,7 +27,7 @@ async function fetchFreeGames() {
     console.log(`📰 游戏简介: ${item.description}`);
     $notification.post(
       `🎮 [Epic 限免]  ${item.title}`,
-      `⏰ 发布时间: ${item.effectiveDate}`,
+      `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`,
       `📰 游戏简介: ${item.description}`,
       {
         url: `https://store.epicgames.com/zh-CN/p/${item.catalogNs.mappings[0].pageSlug}`,
