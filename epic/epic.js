@@ -23,14 +23,24 @@ async function fetchFreeGames() {
   );
   items.forEach((item) => {
     console.log(`🎮 [Epic 限免]  ${item.title}`);
-    console.log(`⏰ 发布时间: ${item.effectiveDate}`);
+    console.log(
+      `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`
+    );
     console.log(`📰 游戏简介: ${item.description}`);
     $notification.post(
       `🎮 [Epic 限免]  ${item.title}`,
       `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`,
       `📰 游戏简介: ${item.description}`,
       {
-        url: `https://store.epicgames.com/zh-CN/p/${item.catalogNs.mappings[0].pageSlug}`,
+        url: `https://store.epicgames.com/zh-CN/p/${
+          item.catalogNs.mappings.length > 0
+            ? item.catalogNs.mappings[0].pageSlug
+            : item.offerMappings.length > 0
+            ? item.offerMappings[0].pageSlug
+            : item.productSlug
+            ? item.productSlug
+            : item.urlSlug
+        }`,
       }
     );
   });
