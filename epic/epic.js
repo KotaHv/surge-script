@@ -27,20 +27,27 @@ async function fetchFreeGames() {
       `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`
     );
     console.log(`📰 游戏简介: ${item.description}`);
+    let url = "https://store.epicgames.com/zh-CN/p/";
+    item.categories.forEach((category) => {
+      if (category.path == "bundles") {
+        url = "https://store.epicgames.com/zh-CN/bundles/";
+      }
+    });
+    url +=
+      item.catalogNs.mappings.length > 0
+        ? item.catalogNs.mappings[0].pageSlug
+        : item.offerMappings.length > 0
+        ? item.offerMappings[0].pageSlug
+        : item.productSlug
+        ? item.productSlug
+        : item.urlSlug;
+    console.log(`url: ${url}`);
     $notification.post(
       `🎮 [Epic 限免]  ${item.title}`,
       `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`,
       `📰 游戏简介: ${item.description}`,
       {
-        url: `https://store.epicgames.com/zh-CN/p/${
-          item.catalogNs.mappings.length > 0
-            ? item.catalogNs.mappings[0].pageSlug
-            : item.offerMappings.length > 0
-            ? item.offerMappings[0].pageSlug
-            : item.productSlug
-            ? item.productSlug
-            : item.urlSlug
-        }`,
+        url,
       }
     );
   });
