@@ -55,15 +55,19 @@ async function fetchFreeGames() {
         ? contentResp.data.about.shortDescription
         : contentResp.data.pages[0].data.about.shortDescription;
     }
-    console.log(`🎮 [Epic 限免]  ${item.title}`);
-    console.log(
-      `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`
+    const startDate = formatTime(
+      item.promotions.promotionalOffers[0].promotionalOffers[0].startDate
     );
+    const endDate = formatTime(
+      item.promotions.promotionalOffers[0].promotionalOffers[0].endDate
+    );
+    console.log(`🎮 [Epic 限免]  ${item.title}`);
+    console.log(`📅️ 日期: ${startDate} - ${endDate}`);
     console.log(`url: ${url}`);
     console.log(`📰 游戏简介: ${description}`);
     $notification.post(
       `🎮 [Epic 限免]  ${item.title}`,
-      `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`,
+      `📅️ 日期: ${startDate} - ${endDate}`,
       `📰 游戏简介: ${description}`,
       {
         url,
@@ -95,4 +99,17 @@ function Request() {
       return this.request(obj, "post");
     }
   })();
+}
+function formatTime(timestamp) {
+  const date = new Date(timestamp);
+  const year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  month = month > 10 ? month : `0${month}`;
+  let day = date.getDate();
+  day = day > 10 ? day : `0${day}`;
+  let hours = date.getHours();
+  hours = hours > 10 ? hours : `0${hours}`;
+  let minutes = date.getMinutes();
+  minutes = minutes > 10 ? minutes : `0${minutes}`;
+  return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
