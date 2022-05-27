@@ -21,20 +21,21 @@ async function fetchFreeGames() {
         item.promotions.promotionalOffers[0].promotionalOffers[0].endDate
       ) > now
   );
-  items.forEach((item) => {
-    console.log(`🎮 [Epic 限免]  ${item.title}`);
-    console.log(
-      `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`
-    );
-    console.log(`📰 游戏简介: ${item.description}`);
+  for await (let item of items) {
     let url = "https://store.epicgames.com/zh-CN/p/";
+    let isBundles = false;
+    let contentUrl =
+      "https://store-content-ipv4.ak.epicgames.com/api/zh-CN/content/products/";
     item.categories.some((category) => {
       if (category.path == "bundles") {
         url = "https://store.epicgames.com/zh-CN/bundles/";
+        isBundles = true;
+        contentUrl =
+          "https://store-content-ipv4.ak.epicgames.com/api/zh-CN/content/bundles/";
         return true;
       }
     });
-    url +=
+    const urlSlug =
       item.catalogNs.mappings.length > 0
         ? item.catalogNs.mappings[0].pageSlug
         : item.offerMappings.length > 0
@@ -42,16 +43,33 @@ async function fetchFreeGames() {
         : item.productSlug
         ? item.productSlug
         : item.urlSlug;
+    url += urlSlug;
+    contentUrl += urlSlug;
+    let description = item.description;
+    if (item.offerType !== "BASE_GAME") {
+      let contentResp = await request.get({
+        url: contentUrl,
+      });
+      contentResp = JSON.parse(contentResp.body);
+      description = isBundles
+        ? contentResp.data.about.shortDescription
+        : contentResp.data.pages[0].data.about.shortDescription;
+    }
+    console.log(`🎮 [Epic 限免]  ${item.title}`);
+    console.log(
+      `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`
+    );
     console.log(`url: ${url}`);
+    console.log(`📰 游戏简介: ${description}`);
     $notification.post(
       `🎮 [Epic 限免]  ${item.title}`,
       `⏰ 发布时间: ${item.promotions.promotionalOffers[0].promotionalOffers[0].startDate}`,
-      `📰 游戏简介: ${item.description}`,
+      `📰 游戏简介: ${description}`,
       {
         url,
       }
     );
-  });
+  }
 }
 
 function Request() {
