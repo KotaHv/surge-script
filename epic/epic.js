@@ -28,9 +28,10 @@ async function fetchFreeGames() {
     );
     console.log(`📰 游戏简介: ${item.description}`);
     let url = "https://store.epicgames.com/zh-CN/p/";
-    item.categories.forEach((category) => {
+    item.categories.some((category) => {
       if (category.path == "bundles") {
         url = "https://store.epicgames.com/zh-CN/bundles/";
+        return true;
       }
     });
     url +=
