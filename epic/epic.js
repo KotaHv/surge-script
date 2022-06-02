@@ -53,7 +53,7 @@ async function fetchFreeGames() {
       contentResp = JSON.parse(contentResp.body);
       description = isBundles
         ? contentResp.data.about.shortDescription
-        : contentResp.data.pages[0].data.about.shortDescription;
+        : contentResp.pages[0].data.about.shortDescription;
     }
     const startDate = formatTime(
       item.promotions.promotionalOffers[0].promotionalOffers[0].startDate
