@@ -5,9 +5,9 @@ const request = Request();
 main().then(() => $done());
 
 async function main() {
-  items.forEach(async (item) => {
+  for await (const item of items) {
     await fetch_item_info(item);
-  });
+  }
 }
 
 async function fetch_item_info(item_id) {
@@ -18,7 +18,7 @@ async function fetch_item_info(item_id) {
   const data = JSON.parse(body);
   const details = data.data.details;
   const name = data.data.name;
-  details.forEach((item) => {
+  for (const item of details) {
     const price = item.price / 100;
     const costPriceOutside = item.cost_price_outside / 100;
     if (price != costPriceOutside) {
@@ -32,7 +32,7 @@ async function fetch_item_info(item_id) {
         }
       );
     }
-  });
+  }
 }
 
 function Request() {
