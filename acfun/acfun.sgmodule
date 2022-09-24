@@ -6,4 +6,4 @@ acfun签到领香蕉 = type=cron,cronexp=0 9 * * *,wake-system=1,script-path=acf
 acfun获取Cookie = type=http-request,pattern=^https:\/\/api-ipv6\.(app\.)?(acfun\.cn|acfunchina\.com)\/rest\/app\/user\/personalInfo,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/acfun/acfun.js
 
 [MITM]
-hostname = %APPEND% *.acfun.cn *.acfunchina.com
+hostname = %APPEND% *.acfun.cn, *.acfunchina.com
