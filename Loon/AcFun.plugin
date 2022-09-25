@@ -1,0 +1,9 @@
+#!name= AcFun
+#!desc= 签到领香蕉
+
+[Script]
+cron "0 9 * * *" script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/AcFun.js, tag=AcFun签到领香蕉
+http-request ^https:\/\/api-ipv6\.(app\.)?(acfun\.cn|acfunchina\.com)\/rest\/app\/user\/personalInfo tag=AcFun Cookie, script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/AcFun.js
+
+[MITM]
+hostname = *.acfun.cn, *.acfunchina.com
