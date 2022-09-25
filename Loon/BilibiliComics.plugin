@@ -1,5 +1,6 @@
 #!name= 哔哩哔哩漫画
 #!desc= 签到
+#!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/BilibiliComic.png
 
 [Script]
 cron "0 9 * * *" script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/BilibiliComics.js, tag=哔哩哔哩漫画签到

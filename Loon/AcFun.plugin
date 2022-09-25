@@ -1,5 +1,6 @@
 #!name= AcFun
 #!desc= 签到领香蕉
+#!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/AcFun.webp
 
 [Script]
 cron "0 9 * * *" script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/AcFun.js, tag=AcFun签到领香蕉
