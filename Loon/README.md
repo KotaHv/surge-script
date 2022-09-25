@@ -3,36 +3,42 @@
 ## AcFun
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/AcFun.plugin
+[Plugin]
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/AcFun.plugin, tag=AcFun签到, enable=true
 ```
 
 ## 哔哩哔哩漫画
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/BilibiliComics.plugin
+[Plugin]
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/BilibiliComics.plugin, tag=哔哩哔哩漫画签到, enable=true
 ```
 
 ## Epic
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/Epic.plugin
+[Plugin]
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/Epic.plugin, tag=Epic, enable=true
 ```
 
 ## 京东签到
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/jd.plugin
+[Plugin]
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/jd.plugin, tag=京东签到, enable=true
 ```
 
 ## 京东比价
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/jdHistoryPrice.plugin
+[Plugin]
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/jdHistoryPrice.plugin, tag=京东比价, enable=true
 ```
 
 ## sspai
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/sspai.plugin
+[Plugin]
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/sspai.plugin, tag=sspai, enable=true
 ```
 
