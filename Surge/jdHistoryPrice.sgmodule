@@ -1,0 +1,8 @@
+#!name=京东比价
+#!desc=获取618、1111、史低、30、90、180最低价格
+#!system=ios
+
+[Script]
+京东比价 = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig|pingou_item),requires-body=1,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jdHistoryPrice.js
+[MITM]
+hostname = %APPEND% api.m.jd.com
