@@ -6,7 +6,7 @@
       "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/AcFun.snippet, tag=AcFun Cookie"
     },
     {
-      "config": "0 9 * * * bilibili-comic.js, tag=哔哩哔哩漫画签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/BilibiliComics.png, enabled=true",
+      "config": "0 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/BilibiliComics.js, tag=哔哩哔哩漫画签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/BilibiliComics.png, enabled=true",
       "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/BilibiliComics.snippet, tag=哔哩哔哩漫画Cookie"
     },
     {

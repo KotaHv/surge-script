@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/AcFun.sni
 [rewrite_remote]
 https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/BilibiliComics.snippet, tag=哔哩哔哩漫画Cookie, update-interval=172800, opt-parser=false, enabled=true
 [task_local]
-0 9 * * * bilibili-comic.js, tag=哔哩哔哩漫画签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/BilibiliComics.png, enabled=true
+0 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/BilibiliComics.js, tag=哔哩哔哩漫画签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/BilibiliComics.png, enabled=true
 ```
 
 ## Epic
