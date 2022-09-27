@@ -1,5 +1,11 @@
 # Quantumult X
 
+## Gallery
+
+```
+https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/gallery.json
+```
+
 ## AcFun
 
 ```
