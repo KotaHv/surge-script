@@ -17,7 +17,7 @@
       "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/jd.snippet, tag=京东Cookie, update-interval=172800, opt-parser=false, enabled=true"
     },
     {
-      "config": "* * 1 1 * 1970 https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jdHistoryPrice.js, tag=京东比价, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/jd.png, enabled=false",
+      "config": "0 0 1 1 1 ? https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jdHistoryPrice.js, tag=京东比价, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/jd.png, enabled=false",
       "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/jdHistoryPrice.snippet, tag=京东比价, update-interval=172800, opt-parser=false, enabled=true"
     },
     {
