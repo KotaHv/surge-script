@@ -3,6 +3,8 @@ const cookieKey = `@${title}.cookie`;
 
 const $ = new Env(title);
 
+const cookie = $.getdata(cookieKey);
+
 if (typeof $request !== "undefined") {
   getCookie();
   $.done();
@@ -15,14 +17,13 @@ function getCookie() {
   let msg = "写入cookie失败\n配置错误, 无法读取请求头";
   if ($request.headers) {
     const regex = /acPasstoken=.+?; auth_key=.+?;/;
-    let cookie = $request.headers.Cookie || $request.headers.cookie;
-    cookie = regex.exec(cookie);
-    if (cookie !== null) {
-      cookie = cookie[0];
-      const oldCookie = $.getdata(cookieKey);
-      msg = oldCookie ? "更新" : "写入";
-      if (cookie != oldCookie) {
-        $.setdata(cookie, cookieKey);
+    let newCookie = $request.headers.Cookie || $request.headers.cookie;
+    newCookie = regex.exec(newCookie);
+    if (newCookie !== null) {
+      newCookie = newCookie[0];
+      msg = cookie ? "更新" : "写入";
+      if (cookie != newCookie) {
+        $.setdata(newCookie, cookieKey);
         msg += "Cookie成功 🎉";
       } else {
         $.log("已是最新Cookie");
@@ -35,7 +36,6 @@ function getCookie() {
 }
 
 async function signIn() {
-  const cookie = $.getdata(cookieKey);
   const req = {
     url: "https://www.acfun.cn/rest/pc-direct/user/signIn",
     headers: {
