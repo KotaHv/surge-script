@@ -1,6 +1,6 @@
 const title = "京东签到";
 const jdCookieKey = "jdCookie";
-const bodyKey = "jdBody";
+const bodyKey = "jrBody";
 const $ = API(title);
 const COOKIE = $.read(jdCookieKey);
 const BODY = $.read(bodyKey);
