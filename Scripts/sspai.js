@@ -6,11 +6,7 @@ main().then(() => $.done());
 
 async function main() {
   for await (const item of items) {
-    try {
-      await fetch_item_info(item);
-    } catch (error) {
-      $.log(error);
-    }
+    await fetch_item_info(item);
   }
 }
 
