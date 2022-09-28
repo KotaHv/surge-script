@@ -1,4 +1,4 @@
-const cookieKey = "cookie-bilibili-comic";
+const cookieKey = "cookie";
 const title = "哔哩哔哩漫画";
 
 const $ = API(title);

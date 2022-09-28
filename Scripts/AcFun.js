@@ -1,4 +1,4 @@
-const cookieKey = "cookie-acfun";
+const cookieKey = "cookie";
 const title = "Acfun";
 
 const $ = API(title);
