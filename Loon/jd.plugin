@@ -1,10 +1,10 @@
 #!name= 京东
 #!desc= 多合一签到
-#!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/jd.png
+#!icon= https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Icons/jd.png
 
 [Script]
-cron "15 9 * * *" script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jd.js, tag=京东多合一签到
-http-request ^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=(signBean|trade_config)|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/(appSign|jrSign)\?) tag=京东Cookie, script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jd.js
+cron "15 9 * * *" script-path=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/jd.js, tag=京东多合一签到
+http-request ^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=(signBean|trade_config)|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/(appSign|jrSign)\?) tag=京东Cookie, script-path=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/jd.js
 
 [MITM]
 hostname = ms.jr.jd.com, me-api.jd.com, api.m.jd.com
