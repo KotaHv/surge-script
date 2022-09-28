@@ -1,4 +1,4 @@
-const $ = API("jd-history-price");
+const $ = API("京东比价");
 const URL = $request.url;
 
 if (URL.includes("serverConfig")) {
