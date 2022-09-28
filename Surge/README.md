@@ -3,36 +3,36 @@
 ## AcFun
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/AcFun.sgmodule
+https://raw.githubusercontent.com/KotaHv/surge-script/OpenAPI/Surge/AcFun.sgmodule
 ```
 
 ## 哔哩哔哩漫画
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/BilibiliComics.sgmodule
+https://raw.githubusercontent.com/KotaHv/surge-script/OpenAPI/Surge/BilibiliComics.sgmodule
 ```
 
 ## Epic
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/Epic.sgmodule
+https://raw.githubusercontent.com/KotaHv/surge-script/OpenAPI/Surge/Epic.sgmodule
 ```
 
 ## 京东签到
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/jd.sgmodule
+https://raw.githubusercontent.com/KotaHv/surge-script/OpenAPI/Surge/jd.sgmodule
 ```
 
 ## 京东比价
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/jdHistoryPrice.sgmodule
+https://raw.githubusercontent.com/KotaHv/surge-script/OpenAPI/Surge/jdHistoryPrice.sgmodule
 ```
 
 ## sspai
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/sspai.sgmodule
+https://raw.githubusercontent.com/KotaHv/surge-script/OpenAPI/Surge/sspai.sgmodule
 ```
 

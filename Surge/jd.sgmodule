@@ -3,7 +3,7 @@
 #!system=ios
 
 [Script]
-京东多合一签到 = type=cron,cronexp=15 9 * * *,wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jd.js
-获取京东Cookie = type=http-request,requires-body=1,pattern=^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=(signBean|trade_config)|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/(appSign|jrSign)\?),script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jd.js
+京东多合一签到 = type=cron,cronexp=15 9 * * *,wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/OpenAPI/Scripts/jd.js
+获取京东Cookie = type=http-request,requires-body=1,pattern=^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=(signBean|trade_config)|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/(appSign|jrSign)\?),script-path=https://raw.githubusercontent.com/KotaHv/surge-script/OpenAPI/Scripts/jd.js
 [MITM]
 hostname = %APPEND% ms.jr.jd.com, me-api.jd.com, api.m.jd.com
