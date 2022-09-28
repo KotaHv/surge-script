@@ -1,6 +1,6 @@
 const title = "京东签到";
-const jdCookieKey = `@${title}.cookie-jd`;
-const bodyKey = `@${title}.body-jr`;
+const jdCookieKey = `@${title}.jdCookie`;
+const bodyKey = `@${title}.jdBody`;
 const $ = new Env(title);
 const COOKIE = $.getdata(jdCookieKey);
 const BODY = $.getdata(bodyKey);

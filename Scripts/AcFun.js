@@ -1,5 +1,5 @@
 const title = "Acfun";
-const cookieKey = `@${title}.cookie-acfun`;
+const cookieKey = `@${title}.cookie`;
 
 const $ = new Env(title);
 

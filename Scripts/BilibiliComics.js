@@ -1,5 +1,5 @@
 const title = "哔哩哔哩漫画";
-const cookieKey = `@${title}.cookie-bilibili-comic`;
+const cookieKey = `@${title}.cookie`;
 
 const $ = new Env(title);
 
