@@ -13,6 +13,7 @@ if (typeof $request !== "undefined") {
 }
 
 function getCookie() {
+  $.log($request.url);
   let msg = `获取cookie失败\n${$request.url}`;
   if ($request.headers) {
     let cookie = $request.headers.Cookie || $request.headers.cookie || "";
@@ -155,9 +156,9 @@ async function jrSubsidy() {
         } else if (data.resultCode == 3) {
           msg = "京东金融-金贴: 失败, 原因: Cookie失效‼️";
         } else {
-          const ng =
-            (data.resultData && data.resultData.resBusiMsg) || data.resultMsg;
-          msg = `京东金融-金贴: 失败, ${`原因: ${ng || `未知`}`} ⚠️`;
+          msg = `京东金融-金贴: 失败, ${`原因: resBusiMsg: ${
+            data.resultData && data.resultData.resBusiMsg
+          };resultMsg: ${data.resultMsg}`} ⚠️`;
         }
       }
     })
