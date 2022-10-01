@@ -2,27 +2,27 @@
   "name": "KotaHv",
   "task": [
     {
-      "config": "0 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/AcFun.js, tag=AcFun签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Icons/AcFun.png, enabled=true",
-      "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/envjs/QuantumultX/AcFun.snippet, tag=AcFun Cookie"
+      "config": "0 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/AcFun.js, tag=AcFun签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/AcFun.png, enabled=true",
+      "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/AcFun.snippet, tag=AcFun Cookie"
     },
     {
-      "config": "0 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/BilibiliComics.js, tag=哔哩哔哩漫画签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Icons/BilibiliComics.png, enabled=true",
-      "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/envjs/QuantumultX/BilibiliComics.snippet, tag=哔哩哔哩漫画Cookie"
+      "config": "0 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/BilibiliComics.js, tag=哔哩哔哩漫画签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/BilibiliComics.png, enabled=true",
+      "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/BilibiliComics.snippet, tag=哔哩哔哩漫画Cookie"
     },
     {
-      "config": "0 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/Epic.js, tag=Epic, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Icons/Epic.png, enabled=true"
+      "config": "0 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/Epic.js, tag=Epic, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/Epic.png, enabled=true"
     },
     {
-      "config": "15 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/jd.js, tag=京东签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Icons/jd.png, enabled=true",
-      "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/envjs/QuantumultX/jd.snippet, tag=京东Cookie"
+      "config": "15 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jd.js, tag=京东签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/jd.png, enabled=true",
+      "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/jd.snippet, tag=京东Cookie"
     },
     {
-      "config": "0 0 1 1 1 ? https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/jdHistoryPrice.js, tag=京东比价, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Icons/jd.png, enabled=false",
-      "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/envjs/QuantumultX/jdHistoryPrice.snippet, tag=京东比价"
+      "config": "0 0 1 1 1 ? https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jdHistoryPrice.js, tag=京东比价, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/jd.png, enabled=false",
+      "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/jdHistoryPrice.snippet, tag=京东比价"
     },
     {
-      "config": "0 10 * * * https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/sspai.js, tag=sspai, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Icons/sspai.png, enabled=true"
+      "config": "0 10 * * * https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/sspai.js, tag=sspai, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/sspai.png, enabled=true"
     }
   ],
-  "description": "Script Gallery EnvJs"
+  "description": "Script Gallery"
 }

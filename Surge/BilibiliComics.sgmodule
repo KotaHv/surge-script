@@ -3,8 +3,8 @@
 #!system=ios
 
 [Script]
-哔哩哔哩漫画签到 = type=cron,cronexp=0 9 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/BilibiliComics.js
-哔哩哔哩漫画 Cookie = type=http-request,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/envjs/Scripts/BilibiliComics.js
+哔哩哔哩漫画签到 = type=cron,cronexp=0 9 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/BilibiliComics.js
+哔哩哔哩漫画 Cookie = type=http-request,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/BilibiliComics.js
 
 [MITM]
 hostname = %APPEND% app.bilibili.com
