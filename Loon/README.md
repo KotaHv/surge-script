@@ -35,3 +35,9 @@ https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/jdHistoryPrice.p
 https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/sspai.plugin, tag=sspai, enable=true
 ```
 
+
+## 崩坏:星穹铁道 hoyolab签到
+
+```
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/StarRail.plugin, tag=崩坏:星穹铁道, enable=true
+```

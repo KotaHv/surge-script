@@ -30,3 +30,8 @@ https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/jdHistoryPrice.
 https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/sspai.sgmodule
 ```
 
+## 崩坏:星穹铁道 hoyolab签到
+
+```
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/StarRail.sgmodule
+```
