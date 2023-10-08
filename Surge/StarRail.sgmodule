@@ -1,0 +1,9 @@
+#!name=崩坏:星穹铁道
+#!desc=hoyolab签到
+
+[Script]
+崩坏:星穹铁道 签到 = type=cron,cronexp=0 9 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/StarRail.js
+崩坏:星穹铁道 获取Cookie = type=http-request,pattern=^https:\/\/act\.hoyolab\.com\/bbs\/event\/signin\/hkrpg\/index.html,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/StarRail.js
+
+[MITM]
+hostname = %APPEND% act.hoyolab.com
