@@ -13,10 +13,6 @@
       "config": "0 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/Epic.js, tag=Epic, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/Epic.png, enabled=true"
     },
     {
-      "config": "15 9 * * * https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jd.js, tag=京东签到, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/jd.png, enabled=true",
-      "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/jd.snippet, tag=京东Cookie"
-    },
-    {
       "config": "0 0 1 1 1 ? https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/jdHistoryPrice.js, tag=京东比价, img-url=https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/jd.png, enabled=false",
       "addons": "https://raw.githubusercontent.com/KotaHv/surge-script/main/QuantumultX/jdHistoryPrice.snippet, tag=京东比价"
     },

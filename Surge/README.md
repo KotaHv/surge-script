@@ -18,12 +18,6 @@ https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/BilibiliComics.
 https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/Epic.sgmodule
 ```
 
-## 京东签到
-
-```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/jd.sgmodule
-```
-
 ## 京东比价
 
 ```

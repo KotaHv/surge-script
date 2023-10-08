@@ -21,13 +21,6 @@ https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/BilibiliComics.p
 https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/Epic.plugin, tag=Epic, enable=true
 ```
 
-## 京东签到
-
-```
-[Plugin]
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/jd.plugin, tag=京东签到, enable=true
-```
-
 ## 京东比价
 
 ```
