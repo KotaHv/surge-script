@@ -1,0 +1,29 @@
+{
+  "id": "KotaHv.app.sub",
+  "name": "KotaHv",
+  "author": "@KotaHv",
+  "icon": "https://avatars.githubusercontent.com/u/92137267?v=4",
+  "repo": "https://github.com/KotaHv/surge-script",
+  "apps": [
+    {
+      "id": "sspai",
+      "name": "sspai",
+      "settings": [
+        {
+          "id": "@sspai.items",
+          "name": "软件id",
+          "val": "",
+          "type": "textarea",
+          "desc": "获取方式: https://sspai.com/item/{id}, 多个id以回车分割"
+        }
+      ],
+      "author": "@KotaHv",
+      "repo": "https://github.com/KotaHv/surge-script",
+      "icons": [
+        "https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/sspai.png",
+        "https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/sspai.png"
+      ],
+      "script": "https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/sspai.js"
+    }
+  ]
+}
