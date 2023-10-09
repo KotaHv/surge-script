@@ -1,0 +1,10 @@
+#!name= HoYoLab签到
+#!desc= 原神、崩铁、崩坏3
+#!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/HoYoLab.png
+
+[Script]
+cron "0 9 * * *" script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/HoYoLab.js, tag=HoYoLab签到
+http-request ^https:\/\/act\.hoyolab\.com\/(bbs\/event\/(signin\/hkrpg|signin-bh3)|ys\/event\/signin-sea-v3)\/index.html script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/HoYoLab.js, tag=HoYoLab Cookie
+
+[MITM]
+hostname = act.hoyolab.com

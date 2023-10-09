@@ -24,6 +24,38 @@
         "https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/sspai.png"
       ],
       "script": "https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/sspai.js"
+    },
+    {
+      "id": "HoYOLab",
+      "name": "HoYOLab签到",
+      "keys": ["@HoYoLab.Cookie"],
+      "settings": [
+        {
+          "id": "@HoYoLab.Genshin",
+          "name": "原神",
+          "val": true,
+          "type": "boolean"
+        },
+        {
+          "id": "@HoYoLab.StarRail",
+          "name": "崩坏:星穹铁道",
+          "val": true,
+          "type": "boolean"
+        },
+        {
+          "id": "@HoYoLab.Honkai3",
+          "name": "崩坏3",
+          "val": true,
+          "type": "boolean"
+        }
+      ],
+      "author": "@KotaHv",
+      "repo": "https://github.com/KotaHv/surge-script",
+      "icons": [
+        "https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/HoYoLab.png",
+        "https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/HoYoLab.png"
+      ],
+      "script": "https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/HoYoLab.js"
     }
   ]
 }
