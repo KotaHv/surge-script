@@ -81,7 +81,7 @@ function getCookie() {
     }
   }
   $.log(msg);
-  $.msg(title, "", msg);
+  $.msg("HoYoLab", "", msg);
 }
 
 function getdata(key) {
