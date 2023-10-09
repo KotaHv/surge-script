@@ -18,13 +18,13 @@ async function main() {
     getCookie();
   } else {
     let tasks = [];
-    if (getdata("Genshin")) {
+    if (getdata("Genshin", { dflt: true, json: true })) {
       tasks.push(signIn(URL.genshin, BODY.genshin, "原神"));
     }
-    if (getdata("StarRail")) {
+    if (getdata("StarRail", { dflt: true, json: true })) {
       tasks.push(signIn(URL.startRail, BODY.startRail, "崩坏:星穹铁道"));
     }
-    if (getdata("Honkai3")) {
+    if (getdata("Honkai3", { dflt: true, json: true })) {
       tasks.push(signIn(URL.honkai3, BODY.honkai3, "崩坏3"));
     }
     await Promise.all(tasks);
@@ -83,10 +83,13 @@ function getCookie() {
   $.log(msg);
   $.msg("HoYoLab", "", msg);
 }
-
-function getdata(key) {
+function getdata(key, { dflt = "", json = false } = {}) {
   let data = $.getdata(`@HoYoLab.${key}`);
-  return [undefined, null, "null", ""].includes(data) ? true : data;
+  data = [undefined, null, "null", ""].includes(data) ? dflt : data;
+  if (json) {
+    return JSON.parse(data);
+  }
+  return data;
 }
 
 function setdata(val, key) {
