@@ -32,6 +32,7 @@ function getCookie() {
     }
   }
   $.log(msg);
+  $.log($request.url);
   $.msg(title, "", msg);
 }
 
