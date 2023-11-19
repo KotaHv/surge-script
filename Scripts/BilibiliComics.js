@@ -14,13 +14,13 @@ if (typeof $request !== "undefined") {
 
 function getCookie() {
   $.log("开始获取Cookie");
-  const regex = /SESSDATA=.+?;/;
+  const regex = /SESSDATA=.+?(;|$)/;
   let msg = "写入Cookie失败\n配置错误, 无法读取请求头";
   if ($request.headers) {
     let newCookie = $request.headers.Cookie || $request.headers.cookie;
     newCookie = regex.exec(newCookie);
     if (newCookie !== null) {
-      newCookie = newCookie[0];
+      newCookie = newCookie[0].replace(/;+$/, "");
       msg = cookie ? "更新" : "写入";
       if (cookie != newCookie) {
         $.setdata(newCookie, cookieKey);
