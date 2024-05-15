@@ -28,35 +28,7 @@ async function fetchFreeGames() {
   );
   for await (let item of items) {
     let url = "https://store.epicgames.com/zh-CN/p/";
-    let isBundles = false;
-    let contentUrl =
-      "https://store-content-ipv4.ak.epicgames.com/api/zh-CN/content/products/";
-    if (item.categories.some((category) => category.path === "bundles")) {
-      url = "https://store.epicgames.com/zh-CN/bundles/";
-      isBundles = true;
-      contentUrl =
-        "https://store-content-ipv4.ak.epicgames.com/api/zh-CN/content/bundles/";
-    }
-    const urlSlug =
-      item.catalogNs.mappings.length > 0
-        ? item.catalogNs.mappings[0].pageSlug
-        : item.offerMappings.length > 0
-        ? item.offerMappings[0].pageSlug
-        : item.productSlug
-        ? item.productSlug
-        : item.urlSlug;
-    url += urlSlug;
-    contentUrl += urlSlug;
     let description = item.description;
-    if (item.offerType !== "BASE_GAME") {
-      let { body2 } = await $.http.get({
-        url: contentUrl,
-      });
-      const data2 = JSON.parse(body2);
-      description = isBundles
-        ? data2.data.about.shortDescription
-        : data2.pages[0].data.about.shortDescription;
-    }
     const startDate = formatTime(
       item.promotions.promotionalOffers[0].promotionalOffers[0].startDate
     );
