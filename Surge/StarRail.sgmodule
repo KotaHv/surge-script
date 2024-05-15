@@ -1,5 +1,6 @@
 #!name=崩坏:星穹铁道
 #!desc=hoyolab签到
+#!category=KotaHv
 
 [Script]
 崩坏:星穹铁道 签到 = type=cron,cronexp=0 9 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/StarRail.js

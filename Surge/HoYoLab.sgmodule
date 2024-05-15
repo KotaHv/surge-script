@@ -1,5 +1,6 @@
 #!name=HoYoLab签到
 #!desc=原神、崩铁、崩坏3
+#!category=KotaHv
 
 [Script]
 HoYoLab签到 = type=cron,cronexp=0 9 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/HoYoLab.js

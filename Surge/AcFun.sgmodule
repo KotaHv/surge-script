@@ -1,6 +1,7 @@
 #!name=AcFun
 #!desc=签到领香蕉
 #!system=ios
+#!category=KotaHv
 
 [Script]
 AcFun签到领香蕉 = type=cron,cronexp=0 9 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/AcFun.js
