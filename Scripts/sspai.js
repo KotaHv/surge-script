@@ -34,6 +34,7 @@ async function fetch_item_info(item_id) {
           {
             "open-url": `https://sspai.com/item/${item_id}`,
             "media-url": image,
+            $media: image,
           }
         );
       }

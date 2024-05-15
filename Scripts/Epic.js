@@ -78,6 +78,7 @@ async function fetchFreeGames() {
       {
         "open-url": url,
         "media-url": image,
+        $media: image,
       }
     );
   }
