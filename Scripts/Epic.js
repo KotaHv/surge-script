@@ -29,6 +29,19 @@ async function fetchFreeGames() {
   for await (let item of items) {
     let url = "https://store.epicgames.com/zh-CN/p/";
     let description = item.description;
+    let urlSlug =
+      item.catalogNs.mappings.length > 0
+        ? item.catalogNs.mappings[0].pageSlug
+        : item.offerMappings.length > 0
+        ? item.offerMappings[0].pageSlug
+        : item.productSlug
+        ? item.productSlug
+        : item.urlSlug;
+    if (item.offerType === "ADD_ON") {
+      urlSlug = item.offerMappings[0].pageSlug;
+    }
+    url += urlSlug;
+
     const startDate = formatTime(
       item.promotions.promotionalOffers[0].promotionalOffers[0].startDate
     );
