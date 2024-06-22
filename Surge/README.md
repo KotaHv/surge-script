@@ -35,3 +35,9 @@ https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/sspai.sgmodule
 ```
 https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/StarRail.sgmodule
 ```
+
+## P5X签到
+
+```
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/P5X.sgmodule
+```
