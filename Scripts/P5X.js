@@ -39,7 +39,6 @@ function getToken() {
     $.setdata(token, "@P5X.token");
     msg = "获取Token成功";
   }
-  $.log(msg);
   $.msg("P5X", "", msg);
 }
 
@@ -58,13 +57,13 @@ async function signIn() {
     };
     try {
       let { body } = await $.http.post(req);
+      $.log(body);
       body = JSON.parse(body);
       msg = body.message;
     } catch (e) {
       msg = `请求失败!\n${e}`;
     }
   }
-  $.log(msg);
   $.msg("P5X", "", msg);
 }
 
