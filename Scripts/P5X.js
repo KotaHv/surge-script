@@ -61,12 +61,12 @@ function getToken() {
 
 async function post(url) {
   const req = {
-    url: url,
+    url,
     headers: {
       ...HEADERS,
-      TOKEN,
+      token: TOKEN,
     },
-    BODY,
+    body: BODY,
   };
   let { body } = await $.http.post(req);
   $.log(body);
