@@ -24,7 +24,11 @@ async function main() {
       $.msg("P5X", "签到失败", "未获取Sign");
       return;
     }
-    let { hasSign, hasReSign } = await checkSign();
+    let { hasSign, hasReSign, message } = await checkSign();
+    if (message) {
+      $.msg("P5X", "签到失败", message);
+      return;
+    }
     if (hasSign) {
       $.msg("P5X", "已签到", "无需再次签到");
     } else {
@@ -93,7 +97,16 @@ async function signIn() {
 
 async function checkSign() {
   let body = await post(HOME_URL);
-  let signInfo = { hasSign: body.result.hasSignToday, hasReSign: 1 };
+  let signInfo = {
+    hasSign: 1,
+    hasReSign: 1,
+    message: "",
+  };
+  if (!body.result) {
+    signInfo.message = body.message;
+    return signInfo;
+  }
+  signInfo.hasSign = body.result.hasSignToday;
   if (body.result.unSignCount > 0 && !body.result.hasReSignToday) {
     signIn.hasReSign = 0;
   }
