@@ -46,6 +46,7 @@ async function signIn() {
   const body = $.getdata("@P5X.signInfo");
   const token = $.getdata("@P5X.token");
   let msg = "未获取Sign";
+  let subtitle = "签到失败";
   if (body && token) {
     const req = {
       url: URL,
@@ -59,12 +60,17 @@ async function signIn() {
       let { body } = await $.http.post(req);
       $.log(body);
       body = JSON.parse(body);
-      msg = body.message;
+      if (body.result) {
+        subtitle = "签到成功";
+        msg = body.result.packItemList[0].name;
+      } else {
+        msg = body.message;
+      }
     } catch (e) {
       msg = `请求失败!\n${e}`;
     }
   }
-  $.msg("P5X", "", msg);
+  $.msg("P5X", subtitle, msg);
 }
 
 // prettier-ignore
