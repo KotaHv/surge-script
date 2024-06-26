@@ -1,5 +1,7 @@
 const $ = new Env("P5X");
-const URL = "https://pwgcapi.wanmei.com/act/month-sign/sign";
+const SIGN_URL = "https://pwgcapi.wanmei.com/act/month-sign/sign";
+const RESIGN_URL = "https://pwgcapi.wanmei.com/act/month-sign/reSign";
+const HOME_URL = "https://pwgcapi.wanmei.com/act/month-sign/home";
 const HEADERS = {
   ":authority": "pwgcapi.wanmei.com",
   accept: "*/*",
@@ -8,6 +10,8 @@ const HEADERS = {
   "user-agent": "DouLiu/9.1.11 (iPhone; iOS 17.4.1; Scale/3.00)",
   "accept-language": "zh-Hans-US;q=1",
 };
+const BODY = $.getdata("@P5X.signInfo");
+const TOKEN = $.getdata("@P5X.token");
 
 main().then(() => $.done());
 
@@ -16,7 +20,20 @@ async function main() {
     getSignInfo();
     getToken();
   } else {
-    await signIn();
+    if (!BODY || !TOKEN) {
+      $.msg("P5X", "签到失败", "未获取Sign");
+      return;
+    }
+    let { hasSign, hasReSign } = await checkSign();
+    if (hasSign) {
+      $.msg("P5X", "已签到", "无需再次签到");
+    } else {
+      await signIn();
+    }
+    if (!hasReSign) {
+      $.log("开始尝试补签");
+      await reSign();
+    }
   }
 }
 
@@ -42,33 +59,60 @@ function getToken() {
   $.msg("P5X", "", msg);
 }
 
+async function post(url) {
+  const req = {
+    url: url,
+    headers: {
+      ...HEADERS,
+      TOKEN,
+    },
+    BODY,
+  };
+  let { body } = await $.http.post(req);
+  $.log(body);
+  body = JSON.parse(body);
+  return body;
+}
+
 async function signIn() {
-  const body = $.getdata("@P5X.signInfo");
-  const token = $.getdata("@P5X.token");
-  let msg = "未获取Sign";
+  let msg = "";
   let subtitle = "签到失败";
-  if (body && token) {
-    const req = {
-      url: URL,
-      headers: {
-        ...HEADERS,
-        token,
-      },
-      body,
-    };
-    try {
-      let { body } = await $.http.post(req);
-      $.log(body);
-      body = JSON.parse(body);
-      if (body.result) {
-        subtitle = "签到成功";
-        msg = body.result.packItemList[0].name;
-      } else {
-        msg = body.message;
-      }
-    } catch (e) {
-      msg = `请求失败!\n${e}`;
+  try {
+    let body = await post(SIGN_URL);
+    if (body.result) {
+      subtitle = "签到成功";
+      msg = body.result.packItemList[0].name;
+    } else {
+      msg = body.message;
     }
+  } catch (e) {
+    msg = `请求失败!\n${e}`;
+  }
+  $.msg("P5X", subtitle, msg);
+}
+
+async function checkSign() {
+  let body = await post(HOME_URL);
+  let signInfo = { hasSign: body.result.hasSignToday, hasReSign: 1 };
+  if (body.result.unSignCount > 0 && !body.result.hasReSignToday) {
+    signIn.hasReSign = 0;
+  }
+  return signInfo;
+}
+
+async function reSign() {
+  let msg = "";
+  let subtitle = "补签失败";
+  try {
+    let body = await post(RESIGN_URL);
+    if (body.result) {
+      subtitle = "补签成功";
+      msg = body.result.packItemList[0].name;
+    } else {
+      msg = body.message;
+    }
+  } catch (e) {
+    msg = `请求失败!\n${e}`;
   }
   $.msg("P5X", subtitle, msg);
 }
