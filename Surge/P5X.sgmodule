@@ -4,7 +4,7 @@
 
 [Script]
 P5X签到 = type=cron,cronexp=0 9 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/P5X.js
-P5X SignInfo = type=http-request,pattern=^https:\/\/pwgcapi\.wanmei\.com\/act\/month-sign\/(sign|reSign|home),script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/P5X.js, requires-body = true
+P5X SignInfo = type=http-request,pattern=^https:\/\/pwgcapi\.wanmei\.com\/act\/month-sign\/(sign|reSign),script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/P5X.js, requires-body = true
 
 [MITM]
 hostname = %APPEND% pwgcapi.wanmei.com
