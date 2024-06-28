@@ -110,7 +110,7 @@ async function checkSign() {
   }
   signInfo.hasSign = body.result.hasSignToday;
   if (body.result.unSignCount > 0 && !body.result.hasReSignToday) {
-    signIn.hasReSign = 0;
+    signInfo.hasReSign = 0;
   }
   return signInfo;
 }
