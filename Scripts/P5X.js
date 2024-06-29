@@ -66,6 +66,7 @@ function getToken() {
 }
 
 async function post(url) {
+  $.log(url);
   const req = {
     url,
     headers: {
