@@ -36,6 +36,12 @@ https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/sspai.plugin, ta
 https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/StarRail.plugin, tag=崩坏:星穹铁道, enabled=true
 ```
 
+## hoyolab签到
+
+```
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/HoYoLab.plugin, tag=崩坏:星穹铁道, enabled=true
+```
+
 ## P5X完美社区签到
 
 ```
