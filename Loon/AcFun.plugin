@@ -1,5 +1,7 @@
 #!name= AcFun
 #!desc= 签到领香蕉
+#!author= KotaHv
+#!homepage= https://github.com/KotaHv/surge-script
 #!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/AcFun.png
 
 [Script]

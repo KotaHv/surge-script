@@ -1,5 +1,7 @@
 #!name= 哔哩哔哩漫画
 #!desc= 签到
+#!author= KotaHv
+#!homepage= https://github.com/KotaHv/surge-script
 #!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/BilibiliComics.png
 
 [Script]

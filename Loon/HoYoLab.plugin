@@ -1,5 +1,7 @@
 #!name= HoYoLab签到
 #!desc= 原神、崩铁、崩坏3
+#!author= KotaHv
+#!homepage= https://github.com/KotaHv/surge-script
 #!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/HoYoLab.png
 
 [Script]

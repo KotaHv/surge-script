@@ -1,5 +1,7 @@
 #!name= Epic
 #!desc= 喜加一资讯
+#!author= KotaHv
+#!homepage= https://github.com/KotaHv/surge-script
 #!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/Epic.png
 
 [Script]

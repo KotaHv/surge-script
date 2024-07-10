@@ -1,5 +1,7 @@
 #!name= 少数派
 #!desc= 软件价格监控
+#!author= KotaHv
+#!homepage= https://github.com/KotaHv/surge-script
 #!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/sspai.png
 
 [Script]

@@ -1,5 +1,7 @@
 #!name= 京东比价
 #!desc= 获取618、1111、史低、30、90、180最低价格
+#!author= KotaHv
+#!homepage= https://github.com/KotaHv/surge-script
 #!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/jd.png
 
 [Script]
