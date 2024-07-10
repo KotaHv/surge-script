@@ -1,0 +1,12 @@
+#!name= P5X签到
+#!desc= P5X完美社区签到、补签
+#!author= KotaHv
+#!homepage= https://github.com/KotaHv/surge-script
+#!icon= https://raw.githubusercontent.com/KotaHv/surge-script/main/Icons/P5X.png
+
+[Script]
+cron "0 9 * * *" script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/P5X.js, tag=P5X签到
+http-request ^https:\/\/pwgcapi\.wanmei\.com\/act\/month-sign\/(sign|reSign), tag=P5X SignInfo, script-path=https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/P5X.js, requires-body = true
+
+[MITM]
+hostname = pwgcapi.wanmei.com

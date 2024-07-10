@@ -30,9 +30,14 @@ https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/jdHistoryPrice.p
 https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/sspai.plugin, tag=sspai, enabled=true
 ```
 
-
 ## 崩坏:星穹铁道 hoyolab签到
 
 ```
 https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/StarRail.plugin, tag=崩坏:星穹铁道, enabled=true
+```
+
+## P5X完美社区签到
+
+```
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/P5X.plugin, tag=P5X, enabled=true
 ```
