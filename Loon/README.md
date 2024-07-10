@@ -3,41 +3,36 @@
 ## AcFun
 
 ```
-[Plugin]
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/AcFun.plugin, tag=AcFun签到, enable=true
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/AcFun.plugin, tag=AcFun签到, enabled=true
 ```
 
 ## 哔哩哔哩漫画
 
 ```
-[Plugin]
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/BilibiliComics.plugin, tag=哔哩哔哩漫画签到, enable=true
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/BilibiliComics.plugin, tag=哔哩哔哩漫画签到, enabled=true
 ```
 
 ## Epic
 
 ```
-[Plugin]
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/Epic.plugin, tag=Epic, enable=true
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/Epic.plugin, tag=Epic, enabled=true
 ```
 
 ## 京东比价
 
 ```
-[Plugin]
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/jdHistoryPrice.plugin, tag=京东比价, enable=true
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/jdHistoryPrice.plugin, tag=京东比价, enabled=true
 ```
 
 ## sspai
 
 ```
-[Plugin]
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/sspai.plugin, tag=sspai, enable=true
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Loon/sspai.plugin, tag=sspai, enabled=true
 ```
 
 
 ## 崩坏:星穹铁道 hoyolab签到
 
 ```
-https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/StarRail.plugin, tag=崩坏:星穹铁道, enable=true
+https://raw.githubusercontent.com/KotaHv/surge-script/main/Surge/StarRail.plugin, tag=崩坏:星穹铁道, enabled=true
 ```
