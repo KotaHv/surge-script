@@ -1,0 +1,15 @@
+name: P5X
+description: 完美游戏社区签到
+scriptings:
+  - schedule:
+      name: P5X签到
+      cron: 0 9 * * *
+      script_url: https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/P5X.js
+  - http_request:
+      name: P5X SignInfo
+      match: ^https:\/\/pwgcapi\.wanmei\.com\/act\/month-sign\/(sign|reSign)
+      script_url: https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/P5X.js
+      body_required: true
+mitm:
+  hostnames:
+    - pwgcapi.wanmei.com

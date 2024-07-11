@@ -1,0 +1,14 @@
+name: 哔哩哔哩漫画
+description: 签到
+scriptings:
+  - schedule:
+      name: 哔哩哔哩漫画签到
+      cron: 0 9 * * *
+      script_url: https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/BilibiliComics.js
+  - http_request:
+      name: 哔哩哔哩漫画 Cookie
+      match: ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo
+      script_url: https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/BilibiliComics.js
+mitm:
+  hostnames:
+    - app.bilibili.com

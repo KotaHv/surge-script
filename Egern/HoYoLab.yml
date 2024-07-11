@@ -1,0 +1,14 @@
+name: HoYoLab签到
+description: 原神、崩铁、崩坏3
+scriptings:
+  - schedule:
+      name: HoYoLab签到
+      cron: 0 9 * * *
+      script_url: https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/HoYoLab.js
+  - http_request:
+      name: HoYoLab Cookie
+      match: ^https:\/\/act\.hoyolab\.com\/(bbs\/event\/(signin\/hkrpg|signin-bh3)|ys\/event\/signin-sea-v3)\/index.html
+      script_url: https://raw.githubusercontent.com/KotaHv/surge-script/main/Scripts/HoYoLab.js
+mitm:
+  hostnames:
+    - act.hoyolab.com
