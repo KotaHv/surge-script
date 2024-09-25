@@ -37,7 +37,11 @@ async function main() {
       await signIn();
     }
     if (!hasReSign) {
-      $.log("开始尝试补签");
+      if (!hasSign) {
+        $.log("等待2s后补签");
+        await sleep(2000);
+      }
+      $.log("开始补签");
       await reSign();
     }
   }
@@ -138,6 +142,10 @@ function $msg(subtitle, message) {
     "media-url": IMAGE,
     $media: IMAGE,
   });
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // prettier-ignore
