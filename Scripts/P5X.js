@@ -3,7 +3,6 @@ const SIGN_URL = "https://pwgcapi.wanmei.com/act/month-sign/sign";
 const RESIGN_URL = "https://pwgcapi.wanmei.com/act/month-sign/reSign";
 const HOME_URL = "https://pwgcapi.wanmei.com/act/month-sign/home";
 const HEADERS = {
-  ":authority": "pwgcapi.wanmei.com",
   accept: "*/*",
   "content-type": "application/x-www-form-urlencoded",
   "accept-encoding": "gzip,deflate",
